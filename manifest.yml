@@ -1,0 +1,43 @@
+lzc-sdk-version: "0.1"
+name: iVentoy
+package: cloud.lazycat.app.iventoy
+version: 1.0.20
+description: iVentoy 是 PXE 服务器的增强版本
+homepage: https://iventoy.com/cn/index.html
+author: iventoy
+application:
+  subdomain: iventoy
+  background_task: true
+  multi_instance: false
+  gpu_accel: false
+  kvm_accel: false
+  usb_accel: false
+  public_path:
+    - /
+  routes:
+    - /=http://iVentoy.cloud.lazycat.app.iventoy.lzcapp:26000/
+  ingress:
+    - protocol: tcp
+      port: 16000
+      service: iVentoy
+    - protocol: tcp
+      port: 10809
+      service: iVentoy
+    - protocol: udp
+      port: 69
+      service: iVentoy
+services:
+  iVentoy:
+    image: registry.lazycat.cloud/czyt/garybowers/iventoy:c00389df58bc68b7
+    binds:
+      - /lzcapp/var/data:/iventoy/data
+      - /lzcapp/var/iso:/iventoy/iso
+    network_mode: host
+    setup_script: |     
+        cp /lzcapp/pkg/content/iventoy.dat /lzcapp/var/data/
+        cp /lzcapp/pkg/content/mac.db /lzcapp/var/data
+
+      
+unsupported_platforms:
+  - ios
+  - android
