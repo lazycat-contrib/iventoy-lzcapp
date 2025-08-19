@@ -31,12 +31,17 @@ services:
         image: registry.lazycat.cloud/czyt/czyt/iventoy:5d176740a98fdfe2
         binds:
             - /lzcapp/var/data:/iventoy/data
+            - /lzcapp/var/user:/iventoy/user
             - /lzcapp/var/iso:/iventoy/iso
         network_mode: host
         setup_script: |
             if [ ! -f /lzcapp/var/data/iventoy.dat ];then
                 cp /lzcapp/pkg/content/iventoy.dat /lzcapp/var/data/
+            else
+                echo "iventoy.dat already exists"
             fi
             if [ ! -f /lzcapp/var/data/mac.db ];then
                 cp /lzcapp/pkg/content/mac.db /lzcapp/var/data
+            else
+                echo "mac.db already exists"
             fi
