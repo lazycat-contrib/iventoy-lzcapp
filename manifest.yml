@@ -45,3 +45,8 @@ services:
             else
                 echo "mac.db already exists"
             fi
+            if [ ! -d /lzcapp/var/user/scripts ];then
+                cp -r /lzcapp/pkg/content/user/scripts /lzcapp/var/user
+            else
+                echo "example scripts already exists"
+            fi
