@@ -13,7 +13,7 @@ application:
 
     upstreams:
         - location: /
-          backend: http://iVentoy:26000/
+          backend: http://host.lzcapp:26000/
 
     ingress:
         - protocol: tcp
