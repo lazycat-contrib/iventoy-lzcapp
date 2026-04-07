@@ -1,12 +1,16 @@
-# manifest: 指定 lpk 包的 manifest.yml 文件路径
-manifest: ./manifest.yml
+# LPK v2 Build Configuration
+# Reference: https://developer.lazycat.cloud
 
 # pkgout: lpk 包的输出路径
 pkgout: ./
+
 # contentdir: 指定打包的内容，将会打包到 lpk 中
 contentdir: ./dist
+
+# icon: 应用图标路径
 icon: ./icon.png
 
+# 构建时 Docker Compose 覆盖配置
 compose_override:
   services:
     iVentoy:
