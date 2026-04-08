@@ -22,7 +22,7 @@ application:
 services:
   iVentoy:
     # czyt/iventoy:v1.0.25
-    image: registry.lazycat.cloud/czyt/czyt/iventoy:4cc228ec09920712
+    image: registry.lazycat.cloud/czyt/czyt/iventoy:5895bdf1bd60896a
     binds:
       - /lzcapp/var/data:/iventoy/data
       - /lzcapp/var/user:/iventoy/user
