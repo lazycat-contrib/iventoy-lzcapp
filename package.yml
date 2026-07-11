@@ -1,11 +1,10 @@
 package: cloud.lazycat.app.iventoy
-version: 1.0.25
+version: 1.0.37
 name: iVentoy
 description: iVentoy 是 PXE 服务器的增强版本
 min_os_version: 1.5.0
 author: iventoy
 homepage: https://iventoy.com/cn/index.html
-
 locales:
   zh:
     name: iVentoy

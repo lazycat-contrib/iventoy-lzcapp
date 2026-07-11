@@ -3,11 +3,9 @@ application:
   background_task: true
   public_path:
     - /
-
   upstreams:
     - location: /
       backend: http://host.lzcapp:26000/
-
   ingress:
     - protocol: tcp
       port: 16000
@@ -18,11 +16,11 @@ application:
     - protocol: udp
       port: 69
       service: iVentoy
-
 services:
   iVentoy:
     # czyt/iventoy:v1.0.25
-    image: registry.lazycat.cloud/czyt/czyt/iventoy:5895bdf1bd60896a
+    # upstream: czyt/iventoy:1.0.37
+    image: registry.lazycat.cloud/czyt/czyt/iventoy:495fd7ef16c74c73
     binds:
       - /lzcapp/var/data:/iventoy/data
       - /lzcapp/var/user:/iventoy/user
