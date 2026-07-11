@@ -1,0 +1,39 @@
+version: 1
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: release/iventoy.lpk
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: iventoy
+build:
+  run_buildscript: false
+images:
+  - id: iventoy
+    target: service
+    service: iVentoy
+    source: czyt/iventoy
+    channel: stable
+    tag_regex: '^v?[0-9]+\.[0-9]+\.[0-9]+$'
+    delivery:
+      mode: lazycat
+stores:
+  official:
+    enabled: true
+    skip_if_version_exists: true
+    create_if_missing: true
+    changelog_locales: [zh, en]
+    application:
+      language: zh
+      name: iVentoy
+      source: https://iventoy.com/cn/index.html
+      source_author: iventoy
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: iVentoy
+    summary: PXE 服务器增强版本

@@ -1,6 +1,8 @@
 # LPK v2 Build Configuration
 # Reference: https://developer.lazycat.cloud
 
+manifest: ./lzc-manifest.yml
+
 # pkgout: lpk 包的输出路径
 pkgout: ./
 
