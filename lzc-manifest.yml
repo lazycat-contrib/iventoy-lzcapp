@@ -19,7 +19,7 @@ application:
 services:
   iVentoy:
     # czyt/iventoy:v1.0.25
-    # upstream: czyt/iventoy:1.0.39
+    # upstream: czyt/iventoy:1.0.38
     image: registry.lazycat.cloud/czyt/czyt/iventoy:c7e0a702acc30a28
     binds:
       - /lzcapp/var/data:/iventoy/data
